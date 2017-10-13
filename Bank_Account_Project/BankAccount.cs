@@ -8,5 +8,16 @@ namespace Bank_Account_Project
 {
     class BankAccount
     {
+        //Fields
+
+        
+    
+          
+
+
+
+
+
+
     }
 }

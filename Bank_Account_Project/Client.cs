@@ -9,9 +9,9 @@ namespace Bank_Account_Project
     class Client
     {
         //Fields
-        private string firstName;
+        private string firstName ;
         private int lastFour;
-        private string lastName;
+        private string lastName  ;
         
         //Properties
 
@@ -42,6 +42,17 @@ namespace Bank_Account_Project
             this.lastName = lastName;
             this.lastFour = lastFour;
         }
+
+
+        public void displayInfo()
+        {
+            Console.WriteLine("Name: " + firstName + " " + lastName + ": Last four of social security: " + lastFour);
+        }
+
+
+
+
+
 
 
 
