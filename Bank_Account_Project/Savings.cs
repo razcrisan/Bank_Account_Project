@@ -6,14 +6,16 @@ using System.Threading.Tasks;
 
 namespace Bank_Account_Project
 {
-    class Savings
+    class Savings : BankAccount
     {
         //fields
         //double min balance the lowest amount of money to have is $200
-        private double savingsAccountBalance;
-        private double minBalance = 200;
+        protected double savingsAccountBalance = 500.00;
+        public double minBalance = 200.00;
 
-        public double AccountBalance
+     
+        //Default Constructor
+        public double SavingsAccountBalance
         {
             get { return this.savingsAccountBalance; }
         }
@@ -22,8 +24,28 @@ namespace Bank_Account_Project
         {
             get { return this.minBalance; }
         }
+        //constructors
 
+        public Savings(double savingsAccountBalance)
+        {
+            this.savingsAccountBalance = savingsAccountBalance;
+        }
 
+        //method
+        public override void Balance()
+        {
+           Console.WriteLine("Your savings account balance is: $ " + savingsAccountBalance);
+        }
+
+        public override double Deposit()
+        {
+            return savingsAccountBalance + depositAmount; 
+        }
+        
+public override double Withdraw()
+        {
+            return savingsAccountBalance - withdrawAmount;
+        }
 
 
 

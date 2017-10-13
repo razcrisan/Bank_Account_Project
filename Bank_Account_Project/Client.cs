@@ -31,11 +31,13 @@ namespace Bank_Account_Project
             get { return this.firstName; }
         }
 
+        //default constructor
         public Client()
         {
 
         }
 
+        //constructor
         public Client (string firstName, string lastName, int lastFour)
         {
             this.firstName = firstName;
@@ -43,25 +45,11 @@ namespace Bank_Account_Project
             this.lastFour = lastFour;
         }
 
-
+        //method
         public void displayInfo()
         {
             Console.WriteLine("Name: " + firstName + " " + lastName + ": Last four of social security: " + lastFour);
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
