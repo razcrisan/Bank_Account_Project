@@ -12,7 +12,7 @@ namespace Bank_Account_Project
         {
             
                 Client client1 = new Bank_Account_Project.Client("Razvan", "Crisan", 1234);
-                Savings savings = new Savings(500.00);
+                Savings savings = new Savings(1000.00);
                 Checking checking = new Checking(350.00);
 
 
@@ -20,8 +20,8 @@ namespace Bank_Account_Project
 
             string newTransaction;
 
-            do
-            {
+            //do
+            //{
                 //When user launches Applicating they will see this menu.
 
 
@@ -59,6 +59,7 @@ namespace Bank_Account_Project
                     }
 
 
+
                 }
                 if (menuOptions == 3)
                 {
@@ -91,27 +92,29 @@ namespace Bank_Account_Project
                     Console.WriteLine("Which account would you like to withdraw from?");
                     Console.WriteLine("a. Checkings");
                     Console.WriteLine("b. Savings");
-                    Console.WriteLine("c. Return to Main Menu");
                     char menuOptions2 = char.Parse(Console.ReadLine().ToLower());
                     if (menuOptions2 == 'a')
                     {
                         Console.WriteLine("Enter withdraw amount:");
                         checking.withdrawAmount = double.Parse(Console.ReadLine());
                         double newBalance = checking.Withdraw();
+                        Console.WriteLine("Your new Balance is: $" + checking.Withdraw());
+                        
                         if (newBalance < 0)
                         {
                             Console.WriteLine("You cannot overdraft from checking.");
                             Console.WriteLine("Enter new withdraw amount");
                             checking.withdrawAmount = double.Parse(Console.ReadLine());
-                            double newBalance2 = checking.Withdraw();
-                            Console.WriteLine("Balance after withdraw is: $" + (checking.Withdraw()));
+                            checking.Withdraw();
+                            Console.WriteLine("Balance after withdraw is: $" + (checking.Withdraw()- newBalance));
                         }
                     }
                     else if (menuOptions2 == 'b')
                     {
                         Console.WriteLine("Enter withdraw amount:");
                         savings.withdrawAmount = double.Parse(Console.ReadLine());
-                        double NewBalance = savings.Withdraw();
+                        savings.Withdraw();
+                    double newBalance2 = savings.Withdraw();
                         Console.WriteLine("Balance after withdraw is: $" + (savings.Withdraw()));
                         if (minBalance <= 200.00)
                         {
@@ -122,19 +125,22 @@ namespace Bank_Account_Project
                         }
                     }
 
+
+                 
                 }
+
                 if (menuOptions == 5)
-                {
-                    Console.WriteLine("Thanks for choosing our bank");
-                    newTransaction = Console.ReadLine().Trim().Trim();
-                }
-                while (newTransaction == "YES")
-                    if (newTransaction == "NO")
-                    {
-                        Console.WriteLine("Thank you for visiting our bank, have a nice day!");
-                    }
+                Console.WriteLine("Would you like to make another transaction?");
+                newTransaction = Console.ReadLine().Trim().Trim();
+            //}
 
+            //    while (newTransaction == "YES") ;
+            //        if (newTransaction == "NO")
+            //        {
+            //            Console.WriteLine("Thank you for visiting our bank, have a nice day!");
+            //        }
 
+            
 
 
             

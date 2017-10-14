@@ -8,16 +8,16 @@ namespace Bank_Account_Project
 {
     class Checking : BankAccount
     {
-        private double newChecking;
+        private double checkingAccountBalance;
   
 
 
 
         //Fields double will hold accound balance
         //constructor
-        public double NewChecking
+        public double CheckingAccountBalance
         {
-            get { return this.newChecking; }
+            get { return this.checkingAccountBalance; }
         }
 
         //default constructor
@@ -27,25 +27,25 @@ namespace Bank_Account_Project
         }
 
         //constructor
-        public Checking(double newChecking)
+        public Checking(double checkingAccountBalance)
         {
-            this.newChecking = newChecking;
+            this.checkingAccountBalance = checkingAccountBalance;
         }
 
         //method
         public override void Balance()
         {
-            Console.WriteLine(newChecking);
+            Console.WriteLine(checkingAccountBalance);
         }
 
         public override double Deposit()
         {
-            return newChecking + depositAmount;
+            return checkingAccountBalance + depositAmount;
         }
 
         public override double Withdraw()
         {
-            return newChecking - withdrawAmount;
+            return checkingAccountBalance - withdrawAmount;
         }
 
     

@@ -13,7 +13,7 @@ namespace Bank_Account_Project
         public double depositAmount;
         private double accountBalance;
         public double withdrawAmount;
-        public char Options2;
+        
         
        
             
@@ -33,11 +33,13 @@ namespace Bank_Account_Project
 
         //abstract method
         public abstract void Balance();
-
+    
         public abstract double Deposit();
 
         public abstract double Withdraw();
 
+        
+        
         
 
     }

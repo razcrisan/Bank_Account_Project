@@ -6,14 +6,17 @@ using System.Threading.Tasks;
 
 namespace Bank_Account_Project
 {
-    class Client
+    class Client 
     {
         //Fields
         private string firstName ;
         private int lastFour;
         private string lastName  ;
         
+
         //Properties
+
+ 
 
         public string FirstName
         {
@@ -53,5 +56,8 @@ namespace Bank_Account_Project
 
 
 
-    }
+   
+      
+
+}
 }

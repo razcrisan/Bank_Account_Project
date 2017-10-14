@@ -10,7 +10,7 @@ namespace Bank_Account_Project
     {
         //fields
         //double min balance the lowest amount of money to have is $200
-        protected double newSavings = 500.00;
+        protected double savingsAccountBalance = 500.00;
         public double minBalance = 200.00;
       
 
@@ -18,7 +18,7 @@ namespace Bank_Account_Project
         //Default Constructor
         public double NewSavings
         {
-            get { return this.newSavings; }
+            get { return this.savingsAccountBalance; }
         }
 
         private double MinBalance
@@ -29,23 +29,23 @@ namespace Bank_Account_Project
 
         public Savings(double savingsAccountBalance)
         {
-            this.newSavings = newSavings;
+            this.savingsAccountBalance = savingsAccountBalance;
         }
 
         //method
         public override void Balance()
         {
-           Console.WriteLine("Your savings account balance is: $ " + newSavings);
+           Console.WriteLine("Your savings account balance is: $ " + savingsAccountBalance);
         }
 
         public override double Deposit()
         {
-            return newSavings + depositAmount; 
+            return savingsAccountBalance + depositAmount; 
         }
         
         public override double Withdraw()
         {
-            return newSavings - withdrawAmount;
+            return savingsAccountBalance - withdrawAmount;
         }
 
 
