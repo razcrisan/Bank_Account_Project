@@ -13,9 +13,11 @@ namespace Bank_Account_Project
         public double depositAmount;
         private double accountBalance;
         public double withdrawAmount;
-
+        public char Options2;
         
-       //properties
+       
+            
+            //properties
         public int AccountNumber
         {
             get { return this.accountNumber; }
@@ -35,10 +37,8 @@ namespace Bank_Account_Project
         public abstract double Deposit();
 
         public abstract double Withdraw();
+
         
-
-    
-
 
     }
 }

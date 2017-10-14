@@ -11,14 +11,15 @@ namespace Bank_Account_Project
         static void Main(string[] args)
         {
             
-                Client client1 = new Bank_Account_Project.Client("Razvan", "Crisan", 1234);
+            Client client1 = new Bank_Account_Project.Client("Razvan", "Crisan", 1234);
                 Savings savings = new Savings(500.00);
                 Checking checking = new Checking(350.00);
 
             double minBalance = 200.00;
-           
 
 
+
+            
                 //When user launches Applicating they will see this menu.
                 Console.WriteLine("Please enter the number of your desired option.");
                 Console.WriteLine("1. View Client Information");
@@ -26,9 +27,13 @@ namespace Bank_Account_Project
                 Console.WriteLine("3. Deposit Funds");
                 Console.WriteLine("4. Withdraw Funds");
                 Console.WriteLine("5. Exit");
+                Console.WriteLine();
 
 
                 int menuOptions = int.Parse(Console.ReadLine());
+
+
+          
 
                 if (menuOptions == 1)
                 {
@@ -63,7 +68,7 @@ namespace Bank_Account_Project
                         double depositAmount = double.Parse(Console.ReadLine());
                         checking.Deposit();
                     Console.WriteLine("Your new balance is: $" + (checking.Deposit()+depositAmount));
-
+                
                    
 
                     }
@@ -87,7 +92,14 @@ namespace Bank_Account_Project
                     Console.WriteLine("Enter withdraw amount:");
                     checking.withdrawAmount = double.Parse(Console.ReadLine());
                     double newBalance = checking.Withdraw();
-                    Console.WriteLine("Balance after withdraw is: $" + (checking.Withdraw()));
+                    if (newBalance < 0)
+                    {
+                        Console.WriteLine("You cannot overdraft from checking.");
+                        Console.WriteLine("Enter new withdraw amount");
+                        checking.withdrawAmount = double.Parse(Console.ReadLine());
+                        double newBalance2 = checking.Withdraw();               
+                        Console.WriteLine("Balance after withdraw is: $" + (checking.Withdraw()));
+                    }
                 }
                 else if (menuOptions2 == 'b')
                 {
