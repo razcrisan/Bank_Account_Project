@@ -35,7 +35,7 @@ namespace Bank_Account_Project
         //method
         public override void Balance()
         {
-            Console.WriteLine(checkingAccountBalance);
+            Console.WriteLine("Your checkinga account balance is $" + checkingAccountBalance);
         }
 
         public override double Deposit()
